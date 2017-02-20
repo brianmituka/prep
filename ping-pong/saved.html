@@ -1,0 +1,60 @@
+<div class="container" id="main">
+<h1><img src="ping.png" alt="" /></h1>
+       <h2>let's play</h2>
+       <h3>rules</h3>
+       <p>
+         ping pong will count your number from 1 with exception from the following:
+         <ol>
+           <li>number divisible by 3  become "ping"</li>
+           <li>number divisible by 5 become "pong"</li>
+           <li>number divisible by both 3 and 5 become "pingpong"</li>
+         </ol>
+       </p>
+<form id="pongpi">
+      <div class="form-group">
+        <label for="number">Enter a number</label>
+        <input id="number" type="text">
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-lg">ping pong!</button>
+</form>
+<div>
+    <ul id="output">
+
+    </ul>
+  </div>
+</div>
+$(document).ready(function() {
+  $("form#pongpi").submit(function() {
+    event.preventDefault();
+    var number= parseInt($("input#number").val());
+
+  pingPong(number);
+
+  numbersToBePingponged.forEach(function (number) {
+    $("#output").append('<li>' + number + "</li>");
+
+  });
+
+  });
+});
+
+//backend
+
+var numbersToBePingponged = [];
+
+var pingPong = function (number) {
+  for (var index = 1; index <=number; index+=1) {
+    if(index  % 15 === 0){
+      numbersToBePingponged.push("pingpong");
+    }else if (index % 5 === 0){
+      numbersToBePingponged.push("pong");
+    }else if (index % 3 ===0){
+      numbersToBePingponged.push("ping");
+    }else{
+      numbersToBePingponged.push(index);
+    }
+  }
+  return numbersToBePingponged;
+
+};

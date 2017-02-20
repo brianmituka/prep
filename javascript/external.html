@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>js</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    var theBestPc;
+    theBestPc={
+      name: 'dell',
+      model:'latitude',
+      processor:'core i5'
+    };
+    console.log(theBestPc.name + " "+ theBestPc.model+" "+ theBestPc.processor);
+    theBestPc.name="macbook"
+    console.log(theBestPc.name + " "+ theBestPc.model+" "+ theBestPc.processor);
+    theBestPc.model="pro"
+      console.log(theBestPc.name + " "+ theBestPc.model+" "+ theBestPc.processor);
+      var sayHello;
+      sayHello= function(){
+        console.log("hello world!");
+      };
+sayHello()
+var showSum;
+showSum=function(number1, number2){
+  var total = number1 + number2;
+  console.log(total);
+}
+showSum(10,2)
+showSum(100,50)
+var movie1;
+var movie2;
+var movieInfo;
+var movie;
+movie1 = {
+  title: "jack reacher",
+  actors: "james cameron",
+  directors: "mots , X"
+}
+movie2 ={
+  title:"army of one",
+  actors: "nicholas cage",
+  directors: "james cameron"
+}
+movieInfo= function(){
+  console.log("title:" + movie.title);
+  console.log("actors:" + movie.actors)
+  console.log("directors:" + movie.directors);
+  console.log(" ");
+}
+movie=movie1;
+movieInfo();
+movie=movie2;
+movieInfo();
+    </script>
+  </body>
+</html>
